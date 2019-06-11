@@ -223,34 +223,21 @@ function calcular() {
     const altura = parseInt(document.getElementById('altura').value)
     const idade = parseInt(document.getElementById('idade').value)
     const feminino = document.getElementById('feminino').checked
-    const masculino = document.getElementById('masculino').checked
     const calculo = (peso / (altura*altura)) * 10000
 
     let resultado
 
 
-
-    if (feminino){
-        if (calculo != calculo) {
-            resultado= "Valores inválidos!"
-        }
-        else if (calculo) 
+    if (calculo != calculo) {
+        resultado= "Valores inválidos!"
+    } else {
+        if (feminino) {
             resultado = Feminino(idade, calculo)
-            resultado = resultado + ", com indice " + calculo.toFixed(2)
-    }
-
-    else if (masculino) {
-        if (calculo != calculo) {
-            resultado = "Valores inválidos!"
-        }
-
-        else if (calculo) {
+        } else {
             resultado = Masculino(idade, calculo)
-
-            resultado = resultado + ", com indice " + calculo.toFixed(2)
         }
+        resultado = resultado + ", com indice " + calculo.toFixed(2)
     }
-
 
     document.getElementById('resultado').value = resultado
 }

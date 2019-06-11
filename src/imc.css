@@ -1,12 +1,13 @@
+*{
+    margin: 0 auto; 
+    padding:0;
+}
 
 body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* align-items: center;
-    margin: 0 auto; */
-
-
+    line-height: 120%;
 }
 
 #resultado, #altura,  #peso, #idade {
@@ -17,5 +18,9 @@ body {
 }
 
 #resultado {
-    width: 250px;
+    width: 200px;
+}
+
+.content {
+    margin: 10px;
 }
