@@ -1,3 +1,5 @@
+const { calculaIndice } = require('./logic')
+
 function calculoFeminino(idade, indice) {
     let resultado
 
@@ -260,10 +262,36 @@ form.addEventListener('submit', function(event) {
 })
 
 
+
 function calculaIndiceApartirDosInputs (elPeso, elAltura) {
     const peso = parseInt (elPeso.value)
     const altura = parseInt(elAltura.value)
-    const indice = (peso / (altura*altura)) * 10000
+    
 
-    return indice
+    return calculaIndice (peso, altura)
 }
+
+
+// function ready {
+//     if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") 
+//         ocultar()
+//      else 
+//         document.addEventListener('DOMContentLoaded', fn);
+// }
+
+// ready(function () {
+//     const ocultar = document.querySelector('conteudo')
+
+//     if (ocultar) 
+        
+
+// })
+
+// function exibirConteudosDasDivs () {
+//     const abaixoDoPeso = document.getElementById('abaixo-peso')
+//     const pesoNormal = document.getElementById('normal-peso')
+//     const pesoSobrepeso = document.getElementById('sobrepeso')
+//     const obesidadeGrau1 = document.getElementById('obesidade-grau1')
+//     const obesidadeGrau2 = document.getElementById('obesidade-grau2')
+//     const obesidadeGrau3 = document.getElementById('obesidade-grau3')
+// }
