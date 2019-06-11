@@ -6,6 +6,7 @@ function Feminino(idade, calculo) {
             resultado = "Abaixo do peso"
         else if (calculo >= 14.23 && calculo <= 20.18)
             resultado = "Peso adequado"
+        
         else if (calculo >= 20.19)
             resultado = "Sobrepeso"
     }
@@ -107,6 +108,7 @@ function Feminino(idade, calculo) {
     }
 
     return resultado
+    
 }
 
 function Masculino(idade, calculo) {
@@ -217,29 +219,22 @@ function Masculino(idade, calculo) {
     return resultado
 }
 
-function calcular() {
-
-    const peso = parseInt(document.getElementById('peso').value)
-    const altura = parseInt(document.getElementById('altura').value)
-    const idade = parseInt(document.getElementById('idade').value)
-    const feminino = document.getElementById('feminino').checked
-    const calculo = (peso / (altura*altura)) * 10000
-
+function calcular(indice, feminino, idade) {
     let resultado
 
 
-    if (calculo != calculo) {
+    if (Number.isNaN(indice) || indice <= 0) {
         resultado= "Valores inválidos!"
     } else {
         if (feminino) {
-            resultado = Feminino(idade, calculo)
+            resultado = Feminino(idade, indice)
         } else {
-            resultado = Masculino(idade, calculo)
+            resultado = Masculino(idade, indice)
         }
-        resultado = resultado + ", com indice " + calculo.toFixed(2)
+        resultado = resultado + ", com indice " + indice.toFixed(2)
     }
 
-    document.getElementById('resultado').value = resultado
+    return resultado
 }
 
 
@@ -248,5 +243,27 @@ const form = document.getElementById('form')
 form.addEventListener('submit', function(event) {
     event.preventDefault()
 
-    calcular()
+    const elPeso = document.getElementById('peso')
+    const elAltura = document.getElementById('altura')
+    const elIdade = document.getElementById('idade')
+    const elFeminino = document.getElementById('feminino')
+    const elResultado = document.getElementById('resultado')
+
+    const indice = calculaIndiceApartirDosInputs(elPeso, elAltura)
+    const resultado = calcular(
+        indice,
+        elFeminino.checked,
+        parseInt(elIdade.value)
+    )
+
+    elResultado.value = resultado
 })
+
+
+function calculaIndiceApartirDosInputs (elPeso, elAltura) {
+    const peso = parseInt (elPeso.value)
+    const altura = parseInt(elAltura.value)
+    const indice = (peso / (altura*altura)) * 10000
+
+    return indice
+}
