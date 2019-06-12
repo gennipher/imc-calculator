@@ -28,7 +28,7 @@ body {
 
 #peso {
     outline: none;
-    width: 100px;
+    
     border: none;
     border-bottom: 1px solid skyblue;
     margin-left: 10px;
@@ -37,7 +37,6 @@ body {
 
 #idade {
     outline: none;
-    width: 100px;
     border: none;
     border-bottom: 1px solid skyblue;
     margin-left: 5px;
@@ -45,16 +44,17 @@ body {
 }
 
 #sexo {
-    display: flex;
+    margin: auto;
+    padding: 5px 0 0;
 }
 
-#botoes {
-    display: flex;
+#reset {
+    border-radius: 10px;
 }
 
 #resultado {
     outline: none;
-    width: 100px;
+    margin-top: 5px;
     border: none;
     border-bottom: 1px solid skyblue;
 }
