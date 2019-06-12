@@ -1,24 +1,62 @@
 *{
-    margin: 0 auto; 
-    padding:0;
+    margin: 0 auto;
+    padding: 5px;
+    /* border: 1px solid skyblue; */
+    /* font-family: sans-serif; */
 }
 
 body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    line-height: 120%;
+    border: none;
 }
 
-#resultado, #altura,  #peso, #idade {
-    border: none;
-    border-bottom: 2px solid blue;
+#altura {
     outline: none;
     width: 100px;
+    border: none;
+    border-bottom: 1px solid skyblue;
+    
+    width: 74%;
+}
+
+#altura p {
+    align-self: left;
+    
+}
+
+#peso {
+    outline: none;
+    width: 100px;
+    border: none;
+    border-bottom: 1px solid skyblue;
+    margin-left: 10px;
+    width: 74%;
+}
+
+#idade {
+    outline: none;
+    width: 100px;
+    border: none;
+    border-bottom: 1px solid skyblue;
+    margin-left: 5px;
+    width: 74%;
+}
+
+#sexo {
+    display: flex;
+}
+
+#botoes {
+    display: flex;
 }
 
 #resultado {
-    width: 200px;
+    outline: none;
+    width: 100px;
+    border: none;
+    border-bottom: 1px solid skyblue;
 }
 
 .content {
