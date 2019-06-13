@@ -52,6 +52,8 @@ function calculaIndiceApartirDosInputs (elPeso, elAltura) {
 }
 
 
+
+
 // function ready {
 //     if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") 
 //         ocultar()

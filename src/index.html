@@ -4,111 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="imc.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="imc.scss">
     
     <title>Calculadora de IMC</title>
 </head>
 <body>
-    <h2>Calculadora de IMC</h2>
-    
-    </br>
+    <div class="container">
 
-    <form id="form">
-        <p>Altura: <input type="text" id="altura" value="" placeholder="Digite sua altura"></p>
-
-        <p>Peso: <input type="text" id="peso" value="" placeholder="Digite seu peso"></p>
-
-        <p>Idade: <input type="text" id="idade" value="" placeholder="Digite sua idade"></p>
+        <h2>Calculadora de IMC</h2>
         
+        <form id="form">
 
-        <div id="sexo">
-            <p>Feminino: <input type="radio" name="sexo" checked="checked" id="feminino"></p> 
-            <p>Masculino: <input type="radio" name="sexo" id="masculino" ></p>
+                <div class="text-inputs">
+                    <div id="text-inputs__text-label">
+                        <label class="text-inputs__text-label--text">Altura</label>
+                    </div>
+                    <div id="text-inputs__input-values">
+                        <input class="text-inputs__input-values--input" type="text" id="altura" name="altura">
+                    </div>
+                </div>
+
+                <div class="text-inputs">
+                    <div id="text-inputs__text-label">
+                        <label class="text-inputs__text-label--text">Peso</label>
+                    </div>
+                    <div id="text-inputs__input-values">
+                        <input class="text-inputs__input-values--input" type="text" id="peso" name="peso">
+                    </div>
+                </div>
+
+                <div class="text-inputs">
+                    <div id="text-inputs__text-label">
+                        <label class="text-inputs__text-label--text">Idade</label>
+                    </div>
+                    <div id="text-inputs__input-values">
+                        <input class="text-inputs__input-values--input" type="text" id="idade" name="idade">
+                    </div>
+                </div>
+
+
+            <div id="sexo">
+                <p>Feminino: <input type="radio" name="sexo" checked="checked" id="feminino"></p> 
+                <p>Masculino: <input type="radio" name="sexo" id="masculino" ></p>
+            </div>
+            
+            </br>
+
+            <div id="botoes">
+                <input type="reset" id="limpar" value="Limpar"> <input type="submit" id="enviar" value="Enviar">
+            </div>
+
+
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+
+
+
+            <div class="text-inputs">
+                <div id="text-inputs__text-label">
+                    <label class="text-inputs__text-label--text">Resultado</label>
+                </div>
+                <div id="text-inputs__input-values">
+                    <input class="text-inputs__input-values--input" type="text" id="resultado" name="resultado">
+                </div>
+            </div>
+            
+
+        </form>
+
+
+
+
+
+
+
+
+
+    <!-- 
+        <div id="abaixo-peso">
+            <h3>Abaixo do peso</h3>
+            <p>Estar abaixo do peso é uma condição em que a pessoa pesa menos do que é considerado adequado para aquela altura, idade e sexo. Uma pessoa nestas condições pode estar com alguma doença que a está emagrecendo ou sua nutrição não está boa o suficiente. Normalmente estas pessoas podem ter deficiências de nutrientes como vitaminas, sais minerais, proteínas, gorduras ou sob o risco de estar com anorexia.</p>
+            <p>Ao perder muito peso em um curto período de tempo, é preciso investigar a causa do emagrecimento. A melhor maneira é procurando um médico para a realização de exames. No caso dos transtornos alimentares, como bulimia e anorexia nervosa, ainda é indicado o acompanhamento terapêutico. O estresse e a ansiedade também podem afetar a perda de peso, sendo indicadores de que o corpo precisa de tratamento. Estar abaixo do peso pode causar:</p>
+            <ul>
+                <li>Unhas e cabelos secos e quebradiços</li>
+                <li>Pele seca</li>
+                <li>Incapacidade de se concentrar</li>
+                <li>Esquecimento</li>
+                <li>Exaustão</li>
+                <li>Irritabilidade</li>
+                <li>Perda de apetite</li>
+                <li>Dor nas articulações</li>
+                <li>Vertigem</li>
+                <li>Sensação d e desmaio</li>
+                <li>Dores de Cabeça</li>
+            </ul>
+            <p>Para ter um ganho de peso saudável, não se deve comer somente muitos alimentos calóricos e sim priorizar alguns alimentos com boa quantidade calórica, mas ricos em nutrientes benéficos e com pouca quantidade de gordura saturada (de origem animal) e gordura trans (de industrializados). Confira algumas estratégias interessantes que podem te ajudar nesse processo:</p>
+            <ul>
+                <li>Alimentos ricos em proteína são grandes aliados: dê preferência às carnes magras (alcatra, filé mignon, maminha, fraldinha) , frango e principalmente peixes e ovos, além de leite e queijos brancos como ricota e minas</li>
+                <li>Aposte nas gorduras boas: amendoim, nozes, amêndoa, avelã, castanhas, azeite de oliva, linhaça e abacate</li>
+                <li>Aumente o consumo de pães, bolos, massas, mandioca, batata, milho e cereais (arroz, farinha de trigo, fubá, aveia), lembrando sempre de optar pelas versões integrais</li>
+
+            </ul>
         </div>
-        
-        </br>
 
-        <div id="botoes">
-            <input type="reset" value="Limpar"> <input type="submit" value="Enviar">
+        <div id="normal-peso">
+            <h3>Peso normal</h3>
+            <p>Estar dentro da faixa de peso normal é significa ter um peso considerado adequado para sua altura, idade e sexo, de acordo com as faixas do IMC - momento de fazer a manutenção do peso Para manter o peso é importante manter uma dieta balanceada (não basta alimentos corretos, mas também quantidades corretas) para seu organismo. Devem ser avaliados peso, idade, composição corporal, presença de doenças e/ou comorbidades. Pontos importantes para manter o peso:</p>
+            <ul>
+                <li>Não existe alimento 100% bom ou 100% ruim. Varie ao máximo o seu cardápio e não elimine completamente nenhum tipo de alimento. O equilíbrio entre a quantidade e a freqüência com a qual você consome refeições mais calóricas é a garantia do seu sucesso</li>
+                <li>Estabeleça uma rotina alimentar</li>
+                <li>Analise os rótulos dos alimentos. Muitas vezes, os alimentos light contêm uma pequena diferença na quantidade calórica, que nem compensa a troca</li>
+                <li>Praticar atividades físicas de forma regular</li>
+                <li>Descanse e durma o suficiente</li>
+                <li>Para ter uma alimentação saudável é importante que ela seja muito variada e conte com todos os grupos alimentares. Lembrando que produtos alimentares ultraprocessados, como embutidos, bolachas recheadas, entre outros, não entram na conta</li>
+                <li>Aumentar a ingestão de líquidos no dia (mínimo de 2L de água)</li>
+            </ul>
+
         </div>
 
-        </br>
+        <div id="sobrepeso">
+            <h3>Sobrepeso</h3>
+            <p>O sobrepeso é uma condição em que a pessoa pesa mais do que é considerado adequado para aquela altura, idade e sexo. O sedentarismo e os maus hábitos alimentares levam ao aumento dessa parcela de indivíduos com sobrepeso a cada ano. Essa faixa, se analisada junto com outras medidas e índices, pode demonstrar um risco maior de doenças como diabetes tipo 2, dislipidemia (com colesterol HDL baixo e triglicérides altos), ácido úrico aumentado, hipertensão, entre outras.</p>
+            <p>O tratamento para o sobrepeso depende de sua causa. Contudo, manter hábitos alimentares saudáveis e praticar atividades físicas são bons aliados contra o excesso de peso. Em casos mais graves, a cirurgia bariátrica pode ser uma alternativa. Dependendo da causa do excesso de peso, pode ser necessária a consulta com o psicólogo ou psiquiatra. Os remédios para emagrecer, quando bem indicados e sempre com acompanhamento médico, podem ser úteis dependendo do caso.</p>
 
-        <p>Resultado: <input type="text" id="resultado" value=""></p>
+        </div>
 
-    </form>
-<!-- 
-    <div id="abaixo-peso">
-        <h3>Abaixo do peso</h3>
-        <p>Estar abaixo do peso é uma condição em que a pessoa pesa menos do que é considerado adequado para aquela altura, idade e sexo. Uma pessoa nestas condições pode estar com alguma doença que a está emagrecendo ou sua nutrição não está boa o suficiente. Normalmente estas pessoas podem ter deficiências de nutrientes como vitaminas, sais minerais, proteínas, gorduras ou sob o risco de estar com anorexia.</p>
-        <p>Ao perder muito peso em um curto período de tempo, é preciso investigar a causa do emagrecimento. A melhor maneira é procurando um médico para a realização de exames. No caso dos transtornos alimentares, como bulimia e anorexia nervosa, ainda é indicado o acompanhamento terapêutico. O estresse e a ansiedade também podem afetar a perda de peso, sendo indicadores de que o corpo precisa de tratamento. Estar abaixo do peso pode causar:</p>
-        <ul>
-            <li>Unhas e cabelos secos e quebradiços</li>
-            <li>Pele seca</li>
-            <li>Incapacidade de se concentrar</li>
-            <li>Esquecimento</li>
-            <li>Exaustão</li>
-            <li>Irritabilidade</li>
-            <li>Perda de apetite</li>
-            <li>Dor nas articulações</li>
-            <li>Vertigem</li>
-            <li>Sensação d e desmaio</li>
-            <li>Dores de Cabeça</li>
-        </ul>
-        <p>Para ter um ganho de peso saudável, não se deve comer somente muitos alimentos calóricos e sim priorizar alguns alimentos com boa quantidade calórica, mas ricos em nutrientes benéficos e com pouca quantidade de gordura saturada (de origem animal) e gordura trans (de industrializados). Confira algumas estratégias interessantes que podem te ajudar nesse processo:</p>
-        <ul>
-            <li>Alimentos ricos em proteína são grandes aliados: dê preferência às carnes magras (alcatra, filé mignon, maminha, fraldinha) , frango e principalmente peixes e ovos, além de leite e queijos brancos como ricota e minas</li>
-            <li>Aposte nas gorduras boas: amendoim, nozes, amêndoa, avelã, castanhas, azeite de oliva, linhaça e abacate</li>
-            <li>Aumente o consumo de pães, bolos, massas, mandioca, batata, milho e cereais (arroz, farinha de trigo, fubá, aveia), lembrando sempre de optar pelas versões integrais</li>
+        <div id="obesidade-grau1">
+            <h3>Obesidade grau 1</h3>
+            <p>O tratamento é realizado através de dieta apropriada com avaliação médica em conjunto com a prática de exercícios, desde que o paciente seja avaliado e liberado pelo médico. Além disso, é preciso que o paciente realize as atividades com o acompanhamento de um profissional de educação física. Em alguns casos avaliados pelo médico, pode-se fazer o uso de remédios para emagrecer para ajudar no controle do peso.</p>
+            <p>A cirurgia bariátrica também pode ser destinada ao tratamento da obesidade grau 1 que é acompanhada de outras doenças cuja obesidade é um agravante ou doenças associadas ao excesso de gordura corporal. Mas neste grau de obesidade, os outros meios do controle de peso são priorizados e a bariátrica só passa a ser considerada quando as alternativas primárias são comprovadamente ineficazes. Pacientes que têm IMC abaixo de 35, sem doenças associadas, devem sem dúvidas tentar o tratamento clínico antes, com chances de conseguir resultados razoáveis.</p>
 
-        </ul>
+        </div>
+
+        <div id="obesidade-grau2">
+            <h3>Obesidade grau 2</h3>
+            <p>Os riscos associados à obesidade de grau II são mais acentuados. Entre eles, estão a esteatose hepática, doenças articulares, hipertensão, diabetes mellitus, síndrome metabólica, cânceres, infarto agudo do miocárdio e acidente vascular cerebral, lembrando que estes dois últimos são as principais causas de morte no Brasil e no mundo.</p>
+            <p>O tratamento desse quadro é dado através de mudanças no estilo de vida, associado ao tratamento multiprofissional com nutricionista, psicólogo e médico. No caso da obesidade grau II, o uso de medicações para a perda de peso também é um método que pode ser proposto diante de avaliação e acompanhamento médico.</p>
+            <p>Já a cirurgia bariátrica costuma ser indicada para obesidade grau II quando não há resultados no tratamento convencional nos últimos dois anos e quando está associada a outras comorbidades, ou seja, outras doenças que podem vir associadas ao excesso de peso, que levam a redução da expectativa e da qualidade de vida.</p>
+
+        </div>
+
+        <div id="obesidade-grau3">
+            <h3>Obesidade grau 3</h3>
+            <p>Entre as patologias associadas à obesidade grau 3, estão os distúrbios hormonais, cardiopatias, morte súbita, dermatites, osteoporose, hipertensão, hepatopatias e insuficiência venosa. Porém, segundo a Organização Mundial de Saúde (OMS), a obesidade de grau III é a principal causa de morte evitável do mundo.</p>
+            <p>A associação de reeducação alimentar e atividade física têm melhores resultados a curto e médio prazo, porém, muitas vezes, em pacientes com obesidade grau III, a atividade física acaba sendo bastante restrita, dependendo do grau de excesso de peso e das artropatias associadas.</p>
+            <p>Nesses casos, esses pacientes podem optar por fazer a cirurgia de redução de estômago para controlar o peso e sair da obesidade. Existem quatro técnicas diferentes de cirurgia bariátrica para obesidade reconhecidas pelo Conselho Federal de Medicina (CFM): Banda Gástrica Ajustável, Gastrectomia Vertical, Bypass Gástrico e Derivação Bileopancreática. A escolha da cirurgia dependerá do quadro do paciente, do grau de obesidade e das doenças relacionadas.</p>
+
+        </div> -->
     </div>
-
-    <div id="normal-peso">
-        <h3>Peso normal</h3>
-        <p>Estar dentro da faixa de peso normal é significa ter um peso considerado adequado para sua altura, idade e sexo, de acordo com as faixas do IMC - momento de fazer a manutenção do peso Para manter o peso é importante manter uma dieta balanceada (não basta alimentos corretos, mas também quantidades corretas) para seu organismo. Devem ser avaliados peso, idade, composição corporal, presença de doenças e/ou comorbidades. Pontos importantes para manter o peso:</p>
-        <ul>
-            <li>Não existe alimento 100% bom ou 100% ruim. Varie ao máximo o seu cardápio e não elimine completamente nenhum tipo de alimento. O equilíbrio entre a quantidade e a freqüência com a qual você consome refeições mais calóricas é a garantia do seu sucesso</li>
-            <li>Estabeleça uma rotina alimentar</li>
-            <li>Analise os rótulos dos alimentos. Muitas vezes, os alimentos light contêm uma pequena diferença na quantidade calórica, que nem compensa a troca</li>
-            <li>Praticar atividades físicas de forma regular</li>
-            <li>Descanse e durma o suficiente</li>
-            <li>Para ter uma alimentação saudável é importante que ela seja muito variada e conte com todos os grupos alimentares. Lembrando que produtos alimentares ultraprocessados, como embutidos, bolachas recheadas, entre outros, não entram na conta</li>
-            <li>Aumentar a ingestão de líquidos no dia (mínimo de 2L de água)</li>
-        </ul>
-
-    </div>
-
-    <div id="sobrepeso">
-        <h3>Sobrepeso</h3>
-        <p>O sobrepeso é uma condição em que a pessoa pesa mais do que é considerado adequado para aquela altura, idade e sexo. O sedentarismo e os maus hábitos alimentares levam ao aumento dessa parcela de indivíduos com sobrepeso a cada ano. Essa faixa, se analisada junto com outras medidas e índices, pode demonstrar um risco maior de doenças como diabetes tipo 2, dislipidemia (com colesterol HDL baixo e triglicérides altos), ácido úrico aumentado, hipertensão, entre outras.</p>
-        <p>O tratamento para o sobrepeso depende de sua causa. Contudo, manter hábitos alimentares saudáveis e praticar atividades físicas são bons aliados contra o excesso de peso. Em casos mais graves, a cirurgia bariátrica pode ser uma alternativa. Dependendo da causa do excesso de peso, pode ser necessária a consulta com o psicólogo ou psiquiatra. Os remédios para emagrecer, quando bem indicados e sempre com acompanhamento médico, podem ser úteis dependendo do caso.</p>
-
-    </div>
-
-    <div id="obesidade-grau1">
-        <h3>Obesidade grau 1</h3>
-        <p>O tratamento é realizado através de dieta apropriada com avaliação médica em conjunto com a prática de exercícios, desde que o paciente seja avaliado e liberado pelo médico. Além disso, é preciso que o paciente realize as atividades com o acompanhamento de um profissional de educação física. Em alguns casos avaliados pelo médico, pode-se fazer o uso de remédios para emagrecer para ajudar no controle do peso.</p>
-        <p>A cirurgia bariátrica também pode ser destinada ao tratamento da obesidade grau 1 que é acompanhada de outras doenças cuja obesidade é um agravante ou doenças associadas ao excesso de gordura corporal. Mas neste grau de obesidade, os outros meios do controle de peso são priorizados e a bariátrica só passa a ser considerada quando as alternativas primárias são comprovadamente ineficazes. Pacientes que têm IMC abaixo de 35, sem doenças associadas, devem sem dúvidas tentar o tratamento clínico antes, com chances de conseguir resultados razoáveis.</p>
-
-    </div>
-
-    <div id="obesidade-grau2">
-        <h3>Obesidade grau 2</h3>
-        <p>Os riscos associados à obesidade de grau II são mais acentuados. Entre eles, estão a esteatose hepática, doenças articulares, hipertensão, diabetes mellitus, síndrome metabólica, cânceres, infarto agudo do miocárdio e acidente vascular cerebral, lembrando que estes dois últimos são as principais causas de morte no Brasil e no mundo.</p>
-        <p>O tratamento desse quadro é dado através de mudanças no estilo de vida, associado ao tratamento multiprofissional com nutricionista, psicólogo e médico. No caso da obesidade grau II, o uso de medicações para a perda de peso também é um método que pode ser proposto diante de avaliação e acompanhamento médico.</p>
-        <p>Já a cirurgia bariátrica costuma ser indicada para obesidade grau II quando não há resultados no tratamento convencional nos últimos dois anos e quando está associada a outras comorbidades, ou seja, outras doenças que podem vir associadas ao excesso de peso, que levam a redução da expectativa e da qualidade de vida.</p>
-
-    </div>
-
-    <div id="obesidade-grau3">
-        <h3>Obesidade grau 3</h3>
-        <p>Entre as patologias associadas à obesidade grau 3, estão os distúrbios hormonais, cardiopatias, morte súbita, dermatites, osteoporose, hipertensão, hepatopatias e insuficiência venosa. Porém, segundo a Organização Mundial de Saúde (OMS), a obesidade de grau III é a principal causa de morte evitável do mundo.</p>
-        <p>A associação de reeducação alimentar e atividade física têm melhores resultados a curto e médio prazo, porém, muitas vezes, em pacientes com obesidade grau III, a atividade física acaba sendo bastante restrita, dependendo do grau de excesso de peso e das artropatias associadas.</p>
-        <p>Nesses casos, esses pacientes podem optar por fazer a cirurgia de redução de estômago para controlar o peso e sair da obesidade. Existem quatro técnicas diferentes de cirurgia bariátrica para obesidade reconhecidas pelo Conselho Federal de Medicina (CFM): Banda Gástrica Ajustável, Gastrectomia Vertical, Bypass Gástrico e Derivação Bileopancreática. A escolha da cirurgia dependerá do quadro do paciente, do grau de obesidade e das doenças relacionadas.</p>
-
-    </div> -->
-
 
     <script src="main.js"></script> 
 </body>
