@@ -1,4 +1,4 @@
-const { calculoFeminino, calculoMasculino, calculaIndice } = require('./logic')
+const { calculoFeminino, calculoMasculino, calculaIndice, eValido } = require('./logic')
 
 
 function calcular(indice, isFeminino, idade) {
@@ -32,13 +32,28 @@ form.addEventListener('submit', function(event) {
     const elResultado = document.getElementById('resultado')
 
     const indice = calculaIndiceApartirDosInputs(elPeso, elAltura)
-    const resultado = calcular(
-        indice,
-        elFeminino.checked,
-        parseInt(elIdade.value)
-    )
 
-    elResultado.value = resultado
+
+    if(eValido()){
+        const loader = document.getElementById('loader')
+        loader.style.visibility = "visible";
+
+        setTimeout(function(){
+            const resultado = calcular(
+                indice,
+                elFeminino.checked,
+                parseInt(elIdade.value)
+            )
+    
+            loader.style.visibility = "hidden" ;
+            elResultado.value = resultado
+    
+         }, 3000);
+
+    } else
+        elResultado.value = "Valores inválidos!"
+    
+
 })
 
 

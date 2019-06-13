@@ -278,8 +278,28 @@ function calculoMasculino(idade, indice) {
     return resultado
 }
 
+function eValido(idade, indice) {
+    
+    let resultado = true;
+
+    if (idade == Infinity || indice == Infinity) {
+        resultado = false
+    } else if (Number.isNaN(idade) || Number.isNaN(indice)){
+        resultado = false
+    } else if (idade == undefined || indice == undefined ) {
+        resultado = false
+    } else if (idade == 0 || indice == 0) {
+        resultado = false
+    }
+
+    return resultado
+}
+
+
+
 module.exports = {
     calculaIndice,
     calculoFeminino,
-    calculoMasculino
+    calculoMasculino,
+    eValido
 }
