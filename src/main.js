@@ -34,7 +34,7 @@ form.addEventListener('submit', function(event) {
     const indice = calculaIndiceApartirDosInputs(elPeso, elAltura)
 
 
-    if(eValido()){
+    if(eValido(elIdade, indice)){
         const loader = document.getElementById('loader')
         loader.style.visibility = "visible";
 
