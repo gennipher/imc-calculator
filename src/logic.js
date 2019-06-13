@@ -134,8 +134,6 @@ function calculoFeminino(idade, indice) {
             resultado = MENSAGENS.ACIMA_NIVEL2
         } else if (indice >= 35 && indice <= 39.9) {
             resultado = MENSAGENS.ACIMA_NIVEL3
-        } else if (indice >= 35 && indice <= 39.9) {
-            resultado = MENSAGENS.ACIMA_NIVEL3
         } else if (indice >= 40) {
             resultado = MENSAGENS.ACIMA_NIVEL4
         }

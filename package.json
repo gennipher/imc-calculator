@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^1.12.3"
+    "parcel": "^1.12.3",
+    "sass": "^1.21.0"
   },
   "devDependencies": {
     "ava": "^2.1.0",
